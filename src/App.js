@@ -59,7 +59,7 @@ function App() {
       <Menu/>
       <h1>copia de discord</h1>
       <h2>twits</h2>
-      <Twits idTwit="12"/>
+      <Twits idTwit={12}/>
     <hr></hr>
 
     <h1>funcion usuario</h1>
