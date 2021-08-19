@@ -1,6 +1,6 @@
 import React from 'react'
 
-const feedcarrBtn = () => {
+const routing = () => {
     return (
         <div>
             
@@ -8,4 +8,4 @@ const feedcarrBtn = () => {
     )
 }
 
-export default feedcarrBtn
+export default routing
