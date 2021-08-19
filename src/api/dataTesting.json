@@ -1,0 +1,55 @@
+{
+  "posts": [
+    {
+      "tags": [],
+      "ingredients": [],
+      "steps": [],
+      "difficulty": "easy",
+      "dishes": "1",
+      "cockingTime": "30min",
+      "votes": [],
+      "favs": [],
+      "_id": "611e112f695186367cc77b94",
+      "title": "some kind of food title 1",
+      "desc": "made for testing porpuses 1",
+      "userId": "611c12aa27ba4a1dc86b971d",
+      "comments": [],
+      "date": "2021-08-19T08:07:11.017Z",
+      "__v": 0
+    },
+    {
+      "tags": [],
+      "ingredients": [],
+      "steps": [],
+      "difficulty": "easy",
+      "dishes": "1",
+      "cockingTime": "30min",
+      "votes": [],
+      "favs": [],
+      "_id": "611e18cabbecb4254877e6f6",
+      "title": "some kind of food title 2",
+      "desc": "made for testing porpuses 2",
+      "userId": "611c12aa27ba4a1dc86b971d",
+      "comments": [],
+      "date": "2021-08-19T08:39:38.034Z",
+      "__v": 0
+    },
+    {
+      "tags": [],
+      "ingredients": [],
+      "steps": [],
+      "difficulty": "easy",
+      "dishes": "1",
+      "cockingTime": "30min",
+      "votes": [],
+      "favs": [],
+      "_id": "611e18f92897b629f098876e",
+      "title": "some kind of food 3",
+      "desc": "made for testing porpuses 3",
+      "userId": "611c12aa27ba4a1dc86b971d",
+      "comments": [],
+      "date": "2021-08-19T08:40:25.251Z",
+      "__v": 0
+    }
+  ]
+}
