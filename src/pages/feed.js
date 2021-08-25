@@ -1,5 +1,5 @@
 import React from 'react'
-import Axios from 'axios'
+import MyApi from "../api/myApi"
 
 function Twit(idTwit) {
   let usr={
@@ -11,11 +11,6 @@ function Twit(idTwit) {
     texto: "fdsdlfjlsañjldfjlñajslkfsñlad",
     likes: 20,
     dislikes: 4
-  }
-  try {
-    // 
-  } catch (error) {
-    console.error('no se pudo obtener informacion')
   }
   return (
   <div className='twit'>
