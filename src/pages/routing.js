@@ -11,6 +11,7 @@ import Register from './registrer'
 import Feed from './feed'
 import User from './user'
 import Me from './me'
+import MyApi from '../api/myApi'; // test-123
 
 const routing = () => {
     return (
@@ -18,12 +19,14 @@ const routing = () => {
     {/* A <Switch> looks through its children <Route>s and
               renders the first one that matches the current URL. */}
           <Switch>
-          <Route exact path="/" children={<Home/>} />
-          <Route path="/feed" children={<Feed/>} />
+          <Route path="/myApi"    children={<MyApi/>} /> {/* test-123 */}
+          <Route exact path="/"   children={<Home/>} />
+          <Route path="/feed"     children={<Feed/>} />
           <Route path="/register" children={<Register/>} />
-          <Route path="/login" children={<Login/>} />
-          <Route path="/user" children={<User/>} />
-          <Route path="/me" children={<Me/>} />
+          <Route path="/login"    children={<Login/>} />
+          <Route path="/user"     children={<User/>} />
+          <Route path="/userId"   children={<User/>} />
+          <Route path="/me"       children={<Me/>} />
           </Switch>
       </Router>
       
