@@ -1,11 +1,11 @@
-import React from 'react'
+import React from "react";
+import HomeWrapper from "../components/home/HomeWrapper";
+const Home = () => {
+  return (
+    <div>
+      <HomeWrapper />
+    </div>
+  );
+};
 
-const pages = () => {
-    return (
-        <div>
-            home
-        </div>
-    )
-}
-
-export default pages
+export default Home;

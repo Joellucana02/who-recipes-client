@@ -1,11 +1,7 @@
-import React from 'react'
+import React from "react";
 
-const me = () => {
-    return (
-        <div>
-            me
-        </div>
-    )
-}
+const Me = () => {
+  return <div></div>;
+};
 
-export default me
+export default Me;
