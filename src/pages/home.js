@@ -8,7 +8,7 @@ function Pages() {
     amigos: 24,
     twits: 48
   }
-  return (<div>
+  return (<>
     <Menu/>
     <h1>copia de discord</h1>
     <div className='twits'>
@@ -26,7 +26,7 @@ function Pages() {
     <p>{usr.twits} twits</p>
     <button>agregar amigo</button>
 
-  </div>);
+  </>);
 }
   
 export default Pages

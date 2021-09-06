@@ -1,5 +1,5 @@
 # RECIPES CLIENT #
-Proyecto con el fin de crear una red social
+Proyecto con el fin de crear una red social de recetas de cocina
 
 # dependencias #
 Para compilar el proyecto es necesario tener instalado:
