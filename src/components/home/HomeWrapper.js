@@ -8,7 +8,7 @@ import { ApiData } from "../../api/ApiData";
 import axios from "axios";
 const { API_KEY, ROOT_API_RECIPES } = ApiData();
 
-const recArr = ["main course", "appetizer", "dessert", "salad"];
+const recArr = ["Breakfast", "Starter", "Dessert", "Vegetarian"];
 
 const HomeWrapper = () => {
   const [mainRecipes, setMainRecipes] = useState([]);
@@ -19,7 +19,7 @@ const HomeWrapper = () => {
         for (let i = 0; i < recArr.length; i++) {
           promises.push(
             await axios.get(
-              `${ROOT_API_RECIPES}/complexSearch?type=${recArr[i]}&apiKey=${API_KEY}`
+              `https://www.themealdb.com/api/json/v1/1/filter.php?c=${recArr[i]}`
               /* headers */
             )
           );
@@ -27,7 +27,7 @@ const HomeWrapper = () => {
         const AllPromise = await Promise.all(promises);
         setMainRecipes(AllPromise);
       } catch (error) {
-        console.log();
+        console.log(error);
       }
     };
     mainRecipesArr();
@@ -39,7 +39,8 @@ const HomeWrapper = () => {
         <h2>LOADING...</h2>
       ) : (
         <>
-          <Main featured={mainRecipes[0].results[3]} />
+          {console.log(mainRecipes)}
+          <Main featured={mainRecipes} />
           <CardContainer recipesArr={mainRecipes} />
         </>
       )}
