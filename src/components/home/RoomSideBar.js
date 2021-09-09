@@ -1,11 +1,11 @@
 import React from 'react'
 
-const feedback = () => {
+const RoomSideBar = () => {
     return (
         <div>
-            
+            rooms
         </div>
     )
 }
 
-export default feedback
+export default RoomSideBar

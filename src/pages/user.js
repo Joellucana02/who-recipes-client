@@ -1,5 +1,5 @@
 import React from "react";
-import Menu from "../context/authContext";
+import Menu from "../context/AuthContext";
 const User = () => {
   var usr = { name: "hola" };
   return (

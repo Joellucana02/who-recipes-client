@@ -1,11 +1,11 @@
 import React from 'react'
 
-const feedcarrBtn = () => {
+const UserSidebar = () => {
     return (
         <div>
-            
+            user info
         </div>
     )
 }
 
-export default feedcarrBtn
+export default UserSidebar
