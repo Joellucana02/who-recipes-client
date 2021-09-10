@@ -1,18 +1,16 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import AddPost from "./AddPost";
+import DisplayArr from "./DisplayArr";
 
 const Main = (props) => {
+  useEffect(() => {
+    console.log("render this");
+  }, [input]);
   return (
     <div>
-        <>
-          <div className="item-main">
-            <img src={''} />
-            <div>
-              <button>f</button>
-              <button>d</button>
-              <button>-----------------------------</button>
-            </div>
-          </div>
-        </>
+      <h2>Future posts will appear here</h2>
+      <AddPost />
+      <DisplayArr />
     </div>
   );
 };

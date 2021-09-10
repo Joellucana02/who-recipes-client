@@ -7,17 +7,14 @@ import { ApiData } from "../../api/ApiData";
 import axios from "axios";
 import UserSidebar from "./UserSidebar";
 import RoomSideBar from "./RoomSideBar";
-const { API_KEY, ROOT_API_RECIPES } = ApiData();
-
-const recArr = ["Breakfast", "Starter", "Dessert", "Vegetarian"];
 
 const HomeWrapper = () => {
   return (
     <div>
       <Navbar />
-          <UserSidebar/>
-          <Main />
-          <RoomSideBar />
+      <UserSidebar />
+      <Main />
+      <RoomSideBar />
       <Footer />
     </div>
   );
