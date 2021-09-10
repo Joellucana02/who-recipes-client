@@ -5,7 +5,7 @@ import DisplayArr from "./DisplayArr";
 const Main = (props) => {
   useEffect(() => {
     console.log("render this");
-  }, [input]);
+  }, []);
   return (
     <div>
       <h2>Future posts will appear here</h2>

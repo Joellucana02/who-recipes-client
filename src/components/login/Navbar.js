@@ -1,9 +1,9 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 const Navbar = () => {
   return (
-    <div>
-      {/*  <div className="login navbar">
+    <div className="login-header">
+      <div className="login-navbar">
         <div>
           <button>SEARCH OR MENU</button>
         </div>
@@ -14,7 +14,7 @@ const Navbar = () => {
           <button>LOGIN</button>
           <button>SIGNUP</button>
         </div>
-      </div> */}
+      </div>
     </div>
   );
 };

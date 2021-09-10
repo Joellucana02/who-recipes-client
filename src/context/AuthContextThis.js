@@ -28,4 +28,3 @@ export const AuthContextProvider = ({ children }) => {
     </context.Provider>
   );
 };
-const AuthContext = context.provider();
