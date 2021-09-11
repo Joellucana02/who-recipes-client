@@ -8,12 +8,12 @@ const Login = () => {
     email: "",
     password: "",
   });
-  const { isFetching, dispatch } = useContext(context);
+  const { isFetching, dispatch, dispatchjwt } = useContext(context);
 
   const handleLogin = (e) => {
     e.preventDefault();
     console.log(formValues);
-    Authlogin(formValues, dispatch);
+    Authlogin(formValues, dispatch, dispatchjwt);
   };
   return (
     <div>
@@ -25,7 +25,7 @@ const Login = () => {
             type="email"
             id="email"
             name="email"
-            placeholder="Email"
+            placeholder="youremail@example.com"
             onChange={(e) =>
               setFormValues({ ...formValues, email: e.target.value })
             }

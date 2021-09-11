@@ -29,6 +29,10 @@ export const AuthReducer = (state, action) => {
         isFetching: false,
         error: false,
       };
+    case "JWT":
+      return {
+        jwt: action.jwt,
+      };
 
     default:
       return { ...state };

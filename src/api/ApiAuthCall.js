@@ -4,13 +4,17 @@ import {
   loginSuccess,
   loginError,
   loginAction,
+  loadJwt,
 } from "./../context/AuthActions";
 
-export const Authlogin = async (user, dispatch) => {
+export const Authlogin = async (user, dispatch, dispatchjwt) => {
   dispatch(loginAction());
   try {
     const myUser = await axios.post("http://localhost:3010/api/v1/login", user);
+    console.log(myUser.data.jwt);
+
     dispatch(loginSuccess(myUser.data.data));
+    dispatchjwt(loadJwt(myUser.data.jwt));
   } catch (error) {
     dispatch(loginError);
   }

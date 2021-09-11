@@ -24,6 +24,12 @@ export const logout = () => {
     type: "LOGOUT",
   };
 };
+export const loadJwt = (myToken) => {
+  return {
+    type: "JWT",
+    jwt: myToken,
+  };
+};
 /* 
 export const loginAction = () => {
   return {

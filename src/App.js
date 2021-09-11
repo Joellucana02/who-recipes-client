@@ -1,10 +1,12 @@
 import React from "react";
+import { AuthContextProvider } from "./context/AuthContextThis";
 import Routing from "./pages/Routing";
-
 function App() {
   return (
     <div>
-      <Routing />
+      <AuthContextProvider>
+        <Routing />
+      </AuthContextProvider>
     </div>
   );
 }
