@@ -7,7 +7,7 @@ const Main = (props) => {
     console.log("render this");
   }, []);
   return (
-    <div>
+    <div className="feed-column">
       <h2>Future posts will appear here</h2>
       <AddPost />
       <DisplayArr />

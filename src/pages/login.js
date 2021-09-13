@@ -1,4 +1,5 @@
 import React, { useContext, useState } from "react";
+import { Link } from "react-router-dom";
 import { Authlogin } from "../api/ApiAuthCall";
 import Navbar from "../components/login/Navbar";
 import { context } from "../context/AuthContextThis";
@@ -47,6 +48,7 @@ const Login = () => {
           >
             LOGIN
           </button>
+          <Link to="/signup">Dont have an account? </Link>
         </form>
       </div>
     </div>

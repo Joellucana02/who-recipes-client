@@ -1,5 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import { AuthRegister } from "../api/ApiAuthCall";
+import { useState, useEffect } from "react";
+import Navbar from "../components/login/Navbar";
+import { context } from "../context/AuthContextThis";
+import { Link } from "react-router-dom";
 
 const Signup = () => {
   const [formValues, setFormValues] = useState({
@@ -18,7 +22,7 @@ const Signup = () => {
   return (
     <div>
       <Navbar />
-      <h2>LOGIN</h2>
+      <h2>SIGNUP</h2>
       <div className="login-form__container">
         <form>
           <input
@@ -65,6 +69,7 @@ const Signup = () => {
           >
             SIGNUP
           </button>
+          <Link to="/login">Already have an account</Link>
         </form>
       </div>
     </div>

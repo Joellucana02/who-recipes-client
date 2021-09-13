@@ -17,7 +17,7 @@ code {
   width: 100vw;
 }
 .login-navbar {
-  width: 96%;
+  width: 98%;
   height: 3rem;
   margin: auto;
   display: flex;
@@ -27,5 +27,48 @@ code {
 }
 /* ================= LOGIN ================= */
 /* ================= HOME ================= */
+.home-wrapper__columns {
+  width: 98%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+}
+.feed-column {
+  width: 50%;
+  background-color: darkgray;
+}
+.sidebar {
+  width: 24%;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+.sidebar > button {
+  margin-bottom: 1rem;
+}
+.user-sidebar {
+  background: chocolate;
+}
+.room-sidebar {
+  background: cornflowerblue;
+}
 
+/* ================= POST ================= */
+.card-top__info {
+  display: flex;
+  flex-direction: row;
+}
+.card-main__content {
+}
+.card-bottom__btn {
+  display: flex;
+  flex-direction: row;
+}
+.login-form__container > form {
+  width: 300px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+/* ================= POST ================= */
 /* ================= HOME ================= */

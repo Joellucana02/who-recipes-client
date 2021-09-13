@@ -11,10 +11,12 @@ import RoomSideBar from "./RoomSideBar";
 const HomeWrapper = () => {
   return (
     <div>
-      <Navbar />
-      <UserSidebar />
-      <Main />
-      <RoomSideBar />
+      {/* <Navbar />  component only appear on responsive mode*/}
+      <div className="home-wrapper__columns">
+        <UserSidebar />
+        <Main />
+        <RoomSideBar />
+      </div>
       <Footer />
     </div>
   );

@@ -1,11 +1,17 @@
-import React from 'react'
-
+import React from "react";
+import { Link } from "react-router-dom";
 const UserSidebar = () => {
-    return (
-        <div>
-            user info
-        </div>
-    )
-}
+  return (
+    <div className="sidebar user-sidebar">
+      <div>
+        <Link to="/">WHO SOCIAL</Link>
+      </div>
+      <button>SEARCH</button>
 
-export default UserSidebar
+      <button>USERNAME</button>
+      <button>LOGOUT</button>
+    </div>
+  );
+};
+
+export default UserSidebar;

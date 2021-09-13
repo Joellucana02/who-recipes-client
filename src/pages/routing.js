@@ -10,7 +10,6 @@ import Signup from "./Signup";
 const Routing = () => {
   return (
     <>
-      <div>hello world</div>
       <Router>
         <Switch>
           <Route exact path="/" children={<Home />} />
