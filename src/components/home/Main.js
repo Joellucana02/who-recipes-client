@@ -1,16 +1,30 @@
+import axios from "axios";
 import React, { useEffect, useState } from "react";
 import AddPost from "./AddPost";
 import DisplayArr from "./DisplayArr";
 
 const Main = (props) => {
+  const [displayPosts, setDisplayPosts] = useState([]);
   useEffect(() => {
     console.log("render this");
   }, []);
+  useEffect(() => {
+    const getPosts = async () => {
+      const raw = await axios.get(
+        "http://localhost:3010/api/v1/posts?sort=-date"
+      );
+      const data = raw.data;
+      console.log(data);
+      setDisplayPosts(data.data);
+    };
+    getPosts();
+  }, []);
+
   return (
     <div className="feed-column">
       <h2>Future posts will appear here</h2>
       <AddPost />
-      <DisplayArr />
+      {displayPosts ? <DisplayArr value={displayPosts} /> : <h2>Loading</h2>}
     </div>
   );
 };

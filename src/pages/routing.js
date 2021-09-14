@@ -22,11 +22,13 @@ const Routing = () => {
       <Router>
         <Switch>
           <Route exact path="/">
-            {!user ? <Redirect to="/login" /> : <Home />}
+            {user ? <Home /> : <Redirect to="/login" />}
           </Route>
-          <Route path="/me">{!user ? <Redirect to="/login" /> : <Me />}</Route>
-          <Route path="/signup" children={<Signup />} />
-          <Route path="/login" children={<Login />} />
+          <Route path="/me">{user ? <Me /> : <Redirect to="/login" />}</Route>
+          <Route path="/signup">
+            {user ? <Redirect to="/" /> : <Signup />}
+          </Route>
+          <Route path="/login">{user ? <Redirect to="/" /> : <Login />}</Route>
           <Route path="/search" children={<Search />} />
           <Route path="/user" children={<User />} />
         </Switch>

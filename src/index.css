@@ -104,6 +104,16 @@ code {
   display: flex;
   flex-direction: column;
 }
+/* ================= POST-COMMENT ================= */
+.comment-container {
+  display: flex;
+  margin: 0.5rem 0 0.5rem 0;
+  width: 100%;
+}
+.comment-img > img {
+  width: 3rem;
+}
+/* ================= POST-COMMENT ================= */
 /* ================= POST ================= */
 /* ================= HOME ================= */
 /* ================= ME ================= */
