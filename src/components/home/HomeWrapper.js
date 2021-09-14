@@ -11,7 +11,7 @@ import RoomSideBar from "./RoomSideBar";
 const HomeWrapper = () => {
   return (
     <div>
-      {/* <Navbar />  component only appear on responsive mode*/}
+      <Navbar />
       <div className="home-wrapper__columns">
         <UserSidebar />
         <Main />

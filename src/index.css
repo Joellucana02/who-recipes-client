@@ -21,9 +21,9 @@ code {
     monospace;
 }
 /* ================= LOGIN ================= */
-.login-header {
+/* .login-header {
   width: 100vw;
-}
+} */
 .login-navbar {
   width: 98%;
   height: 3rem;
