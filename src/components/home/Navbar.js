@@ -1,13 +1,14 @@
 import React from "react";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
-import { logout } from "../../context/AuthActions";
+import { logout, logoutjwt } from "../../context/AuthActions";
 import { context } from "../../context/AuthContextThis";
 
 const Navbar = () => {
-  const { user, dispatch } = useContext(context);
+  const { user, dispatch, dispatchjwt } = useContext(context);
   const handleLogout = () => {
     dispatch(logout());
+    dispatchjwt(logoutjwt());
   };
   return (
     <div className="login-header">

@@ -8,9 +8,6 @@
 }
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background: #998;
@@ -112,6 +109,14 @@ code {
 }
 .comment-img > img {
   width: 3rem;
+}
+.comment-info > p {
+  width: 100%;
+  height: auto;
+}
+textarea {
+  margin: 0.5rem 0 0.5rem 0;
+  resize: none;
 }
 /* ================= POST-COMMENT ================= */
 /* ================= POST ================= */

@@ -1,11 +1,18 @@
 import axios from "axios";
 import React from "react";
+import { useContext } from "react";
 import { useState, useEffect } from "react";
+import { commentSomething } from "../../api/ApiAuthCall";
+import { context } from "../../context/AuthContextThis";
 import CommentItem from "./CommentItem";
 const DisplayItem = (props) => {
   const { uId, data, postId } = props;
   const [userData, setUserData] = useState({});
   const [comments, setComments] = useState(false);
+  const [commentInput, setCommentInput] = useState({
+    comment: "",
+  });
+
   useEffect(() => {
     const getUser = async () => {
       const user = await axios.get(
@@ -14,7 +21,6 @@ const DisplayItem = (props) => {
       );
       const data = await user.data;
       setUserData(data.data);
-      console.log(data);
     };
 
     getUser();
@@ -25,6 +31,11 @@ const DisplayItem = (props) => {
     } else if (comments === true) {
       setComments(false);
     }
+  };
+  const { user, jwt } = useContext(context);
+  const handleComment = () => {
+    commentSomething(user._id, commentInput.comment, jwt, postId);
+    console.log("add commment");
   };
   return (
     <>
@@ -42,6 +53,8 @@ const DisplayItem = (props) => {
                 <button>USERNAME</button>
               )}
             </div>
+            <h5>{new Date(data.date).toLocaleDateString()}</h5>
+            <h5>{new Date(data.date).toLocaleTimeString()}</h5>
             <div>
               <button>FOLLOW</button>
               <button>MORE</button>
@@ -60,6 +73,23 @@ const DisplayItem = (props) => {
             <div className="card-bottom__btn-right">
               <button>SHARE</button>
             </div>
+          </div>
+          <div>
+            <textarea
+              id="comment-box"
+              name="comment-box"
+              placeholder="What`s on Your Mind"
+              rows="2"
+              cols="40"
+              maxLength="300"
+              onChange={(e) =>
+                setCommentInput({
+                  ...commentInput,
+                  comment: e.target.value,
+                })
+              }
+            ></textarea>
+            <button onClick={handleComment}>Send</button>
           </div>
           {comments ? (
             <>

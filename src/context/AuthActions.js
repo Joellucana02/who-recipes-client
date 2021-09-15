@@ -24,6 +24,11 @@ export const logout = () => {
     type: "LOGOUT",
   };
 };
+export const logoutjwt = () => {
+  return {
+    type: "LOGJWT",
+  };
+};
 export const loadJwt = (myToken) => {
   return {
     type: "JWT",

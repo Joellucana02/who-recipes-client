@@ -22,13 +22,13 @@ const Routing = () => {
       <Router>
         <Switch>
           <Route exact path="/">
-            {user ? <Home /> : <Redirect to="/login" />}
+            {!user ? <Redirect to="/login" /> : <Home />}
           </Route>
-          <Route path="/me">{user ? <Me /> : <Redirect to="/login" />}</Route>
+          <Route path="/me">{!user ? <Redirect to="/login" /> : <Me />}</Route>
           <Route path="/signup">
             {user ? <Redirect to="/" /> : <Signup />}
           </Route>
-          <Route path="/login">{user ? <Redirect to="/" /> : <Login />}</Route>
+          <Route path="/login">{!user ? <Login /> : <Redirect to="/" />}</Route>
           <Route path="/search" children={<Search />} />
           <Route path="/user" children={<User />} />
         </Switch>
@@ -44,4 +44,6 @@ export default Routing;
   renders the first one that matches the current URL. */
 }
 
-<Route path="/feed" children={<Feed />} />;
+{
+  /* <Route path="/feed" children={<Feed />} />; */
+}

@@ -7,12 +7,12 @@ import React, {
 } from "react";
 import { AuthReducer } from "./AuthReducer";
 const initialState = {
-  user: null,
+  user: JSON.parse(localStorage.getItem("myUser")) || null,
   isFetching: false,
   error: false,
 };
 const initialjwt = {
-  jwt: null,
+  jwt: JSON.parse(localStorage.getItem("jwt")) || null,
 };
 export const context = createContext(initialState);
 export const AuthContextProvider = ({ children }) => {

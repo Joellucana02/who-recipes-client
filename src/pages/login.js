@@ -13,7 +13,6 @@ const Login = () => {
 
   const handleLogin = (e) => {
     e.preventDefault();
-    console.log(formValues);
     Authlogin(formValues, dispatch, dispatchjwt);
   };
   return (

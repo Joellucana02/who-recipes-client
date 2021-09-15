@@ -11,7 +11,7 @@ const Main = (props) => {
   useEffect(() => {
     const getPosts = async () => {
       const raw = await axios.get(
-        "http://localhost:3010/api/v1/posts?sort=-date"
+        "http://localhost:3010/api/v1/posts?sort=-date&limit=10"
       );
       const data = raw.data;
       console.log(data);
