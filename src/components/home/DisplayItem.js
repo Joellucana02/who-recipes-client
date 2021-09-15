@@ -95,9 +95,12 @@ const DisplayItem = (props) => {
             <>
               {data.comments.length > 0 ? (
                 <>
-                  {data.comments.map((el) => (
-                    <CommentItem key={el._id} pId={el._id} infoP={el} />
-                  ))}
+                  {data.comments
+                    .slice(0)
+                    .reverse()
+                    .map((el) => (
+                      <CommentItem key={el._id} pId={el._id} infoP={el} />
+                    ))}
                 </>
               ) : (
                 ""
