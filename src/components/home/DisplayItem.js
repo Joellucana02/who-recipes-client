@@ -63,7 +63,7 @@ const DisplayItem = (props) => {
             <h5>{new Date(data.date).toLocaleDateString()}</h5>
             <h5>{new Date(data.date).toLocaleTimeString()}</h5>
             <div>
-              <button>FOLLOW</button>
+              {user._id !== uId ? <button>FOLLOW</button> : ""}
               <button>MORE</button>
             </div>
           </div>
