@@ -32,10 +32,10 @@ const Me = () => {
             />
           </div>
           <h3>{user.username}</h3>
-          <div className="me-info__stats">
+          {/* <div className="me-info__stats">
             <button>Follow</button>
             <button>Report</button>
-          </div>
+          </div> */}
           <div className="me-info__stats">
             <button>Followers: {user.followers.length}</button>
             <button>Following: {user.followings.length}</button>

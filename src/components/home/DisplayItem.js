@@ -2,6 +2,7 @@ import axios from "axios";
 import React from "react";
 import { useContext } from "react";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { commentSomething } from "../../api/ApiAuthCall";
 import { context } from "../../context/AuthContextThis";
 import CommentItem from "./CommentItem";
@@ -37,6 +38,10 @@ const DisplayItem = (props) => {
     commentSomething(user._id, commentInput.comment, jwt, postId);
     console.log("add commment");
   };
+  const getUser = () => {
+    console.log("hello world...");
+    localStorage.setItem("user", uId);
+  };
   return (
     <>
       {data ? (
@@ -48,7 +53,9 @@ const DisplayItem = (props) => {
                 alt="null"
               />
               {userData ? (
-                <button>{userData.username}</button>
+                <Link to="/user">
+                  <button onClick={getUser}>{userData.username}</button>
+                </Link>
               ) : (
                 <button>USERNAME</button>
               )}

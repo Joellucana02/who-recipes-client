@@ -14,7 +14,7 @@ import Me from "./Me";
 import Search from "./Search";
 import Signup from "./Signup";
 import { context } from "../context/AuthContextThis";
-
+import UserThis from "./UserThis";
 const Routing = () => {
   const { user } = useContext(context);
   return (
@@ -30,7 +30,7 @@ const Routing = () => {
           </Route>
           <Route path="/login">{!user ? <Login /> : <Redirect to="/" />}</Route>
           <Route path="/search" children={<Search />} />
-          <Route path="/user" children={<User />} />
+          <Route path="/user" children={<UserThis />} />
         </Switch>
       </Router>
     </>
