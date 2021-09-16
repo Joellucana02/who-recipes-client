@@ -15,9 +15,17 @@ const UserSidebar = () => {
       <div>
         <Link to="/">WHO SOCIAL</Link>
       </div>
-      <button>SEARCH</button>
+      <button>
+        <Link to="/search">SEARCH</Link>
+      </button>
       <>
-        {!user ? <button>USERNAME</button> : <button>{user.username}</button>}
+        {!user ? (
+          <button>USERNAME</button>
+        ) : (
+          <button>
+            <Link to="/me">{user.username}</Link>
+          </button>
+        )}
       </>
       <button onClick={handleLogout}>LOGOUT</button>
     </div>

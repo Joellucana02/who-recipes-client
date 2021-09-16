@@ -7,8 +7,6 @@ const DisplayArr = (props) => {
     <div>
       {value.length > 0 ? (
         <>
-          <h2>DisplayArr</h2>
-          {console.log(value)}
           {value.map((el) => (
             <DisplayItem
               key={el._id}

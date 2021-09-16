@@ -13,7 +13,7 @@ const AddPost = () => {
     postSomething(user._id, postInput.post, jwt);
   };
   return (
-    <div>
+    <div className="add-post">
       <textarea
         id="comment-box"
         name="comment-box"

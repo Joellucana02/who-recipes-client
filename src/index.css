@@ -10,7 +10,7 @@ body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: #998;
+  background: #edf0f2;
 }
 
 code {
@@ -21,6 +21,9 @@ code {
 /* .login-header {
   width: 100vw;
 } */
+.login-header {
+  position: relative;
+}
 .login-navbar {
   width: 98%;
   height: 3rem;
@@ -28,7 +31,7 @@ code {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #425442;
+  background: rgb(2, 0, 36);
 }
 /* ================= LOGIN ================= */
 /* ================= HOME ================= */
@@ -40,7 +43,7 @@ code {
 }
 .feed-column {
   width: 50%;
-  background-color: darkgray;
+  /* background-color: darkgray; */
 }
 .sidebar {
   width: 24%;
@@ -52,15 +55,18 @@ code {
   margin-bottom: 1rem;
 }
 .user-sidebar {
-  background: chocolate;
+  background: #7d2ae8;
 }
 .room-sidebar {
-  background: cornflowerblue;
+  background: #7d2ae8;
 }
 
 /* ================= POST ================= */
 .card {
   margin: 2rem 0 2rem 0;
+  background: rgb(185, 185, 184);
+  border-radius: 3%;
+  padding: 1rem 0 1rem 0;
 }
 .card-top__info {
   display: flex;
@@ -68,12 +74,12 @@ code {
   justify-content: space-between;
 }
 .card-top__info > div:nth-child(1) {
-  background: chartreuse;
+  /* background: chartreuse; */
   display: flex;
   align-items: center;
 }
 .card-top__info > div:nth-child(2) {
-  background: aliceblue;
+  background: rgb(210, 213, 216);
   display: flex;
   align-items: center;
 }
@@ -106,6 +112,7 @@ code {
   display: flex;
   margin: 0.5rem 0 0.5rem 0;
   width: 100%;
+  background: rgb(165, 168, 170);
 }
 .comment-img > img {
   width: 3rem;
@@ -120,6 +127,11 @@ textarea {
 }
 /* ================= POST-COMMENT ================= */
 /* ================= POST ================= */
+/* ================= POST-INPUT ================= */
+.add-post {
+  background: rgb(162, 165, 164);
+}
+/* ================= POST-INPUT ================= */
 /* ================= HOME ================= */
 /* ================= ME ================= */
 .user-page__me {
@@ -127,7 +139,7 @@ textarea {
   margin: auto;
 }
 .me-info {
-  background: burlywood;
+  background: rgb(219, 214, 206);
   margin: auto;
 }
 .me-info > h3 {
@@ -139,13 +151,11 @@ textarea {
   margin: 1rem 0 1rem 0;
 }
 .img-container {
-  background: darkgray;
   width: 5rem;
   height: 5rem;
   margin: auto;
 }
 .me-info > div {
-  background: saddlebrown;
   display: flex;
 }
 /* ================= ME ================= */

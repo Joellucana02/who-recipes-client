@@ -1,7 +1,25 @@
+import axios from "axios";
 import React from "react";
+import { useState, useEffect } from "react";
+import { useContext } from "react";
+import AddPost from "../components/home/AddPost";
 import DisplayArr from "../components/home/DisplayArr";
 import Navbar from "../components/home/Navbar";
+import { context } from "../context/AuthContextThis";
 const Me = () => {
+  const [meData, setMeData] = useState({});
+  const { user } = useContext(context);
+  useEffect(() => {
+    const getData = async () => {
+      const raw = await axios.get(
+        `http://localhost:3010/api/v1/users/${user._id}/timeline`
+      );
+      const data = raw.data;
+      console.log(data);
+      setMeData(data.data);
+    };
+    getData();
+  }, []);
   return (
     <>
       <Navbar />
@@ -13,19 +31,24 @@ const Me = () => {
               alt="null"
             />
           </div>
-          <h3>Username</h3>
+          <h3>{user.username}</h3>
           <div className="me-info__stats">
             <button>Follow</button>
             <button>Report</button>
           </div>
           <div className="me-info__stats">
-            <button>Followers</button>
-            <button>Following</button>
-            <button>Posts</button>
+            <button>Followers: {user.followers.length}</button>
+            <button>Following: {user.followings.length}</button>
+            <button>Posts: {meData.length} </button>
           </div>
         </div>
         <div className="me-posts">
-          <DisplayArr />
+          <AddPost />
+          {meData.length > 0 ? (
+            <DisplayArr value={meData} />
+          ) : (
+            <h2>No post available. Create posts to gain Followers</h2>
+          )}
         </div>
       </div>
     </>

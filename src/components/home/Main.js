@@ -11,7 +11,7 @@ const Main = (props) => {
   useEffect(() => {
     const getPosts = async () => {
       const raw = await axios.get(
-        "http://localhost:3010/api/v1/posts?sort=-date&limit=10"
+        "http://localhost:3010/api/v1/posts?sort=-date&limit=10&page=1"
       );
       const data = raw.data;
       console.log(data);
@@ -22,7 +22,6 @@ const Main = (props) => {
 
   return (
     <div className="feed-column">
-      <h2>Future posts will appear here</h2>
       <AddPost />
       {displayPosts ? <DisplayArr value={displayPosts} /> : <h2>Loading</h2>}
     </div>

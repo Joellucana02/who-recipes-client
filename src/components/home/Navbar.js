@@ -14,7 +14,9 @@ const Navbar = () => {
     <div className="login-header">
       <div className="login-navbar">
         <div>
-          <button>SEARCH OR MENU</button>
+          <button>
+            <Link to="/search">SEARCH OR MENU</Link>
+          </button>
         </div>
         <div>
           <Link to="/">WHO SOCIAL</Link>
@@ -24,7 +26,9 @@ const Navbar = () => {
             {!user ? (
               <button>USERNAME</button>
             ) : (
-              <button>{user.username}</button>
+              <button>
+                <Link to="/me">{user.username}</Link>
+              </button>
             )}
           </>
           <button onClick={handleLogout}>LOGOUT</button>
