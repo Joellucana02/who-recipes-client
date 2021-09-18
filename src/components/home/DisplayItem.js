@@ -3,7 +3,7 @@ import React from "react";
 import { useContext } from "react";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { commentSomething } from "../../api/ApiAuthCall";
+import { commentSomething, votePost, followUser } from "../../api/ApiAuthCall";
 import { context } from "../../context/AuthContextThis";
 import CommentItem from "./CommentItem";
 const DisplayItem = (props) => {
@@ -38,8 +38,15 @@ const DisplayItem = (props) => {
     commentSomething(user._id, commentInput.comment, jwt, postId);
     console.log("add commment");
   };
-  const getUser = () => {
+  const handleVotes = () => {
+    votePost(user._id, postId, jwt);
     console.log("hello world...");
+  };
+  const follow = () => {
+    followUser(user._id, data.userId, jwt);
+    console.log("hello world...");
+  };
+  const getUser = () => {
     localStorage.setItem("user", uId);
   };
   return (
@@ -63,7 +70,7 @@ const DisplayItem = (props) => {
             <h5>{new Date(data.date).toLocaleDateString()}</h5>
             <h5>{new Date(data.date).toLocaleTimeString()}</h5>
             <div>
-              {user._id !== uId ? <button>FOLLOW</button> : ""}
+              {user._id !== uId ? <button onClick={follow}>FOLLOW</button> : ""}
               <button>MORE</button>
             </div>
           </div>
@@ -72,7 +79,7 @@ const DisplayItem = (props) => {
           </div>
           <div className="card-bottom__btn">
             <div className="card-bottom__btn-left">
-              <button>VOTES: {data.votes.length}</button>
+              <button onClick={handleVotes}>VOTES: {data.votes.length}</button>
               <button onClick={handleComments}>
                 COMMENTS: {data.comments.length}
               </button>

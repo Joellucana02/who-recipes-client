@@ -23,6 +23,7 @@ code {
 } */
 .login-header {
   position: relative;
+  background: rgb(2, 0, 36);
 }
 .login-navbar {
   width: 98%;
@@ -31,7 +32,6 @@ code {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: rgb(2, 0, 36);
 }
 /* ================= LOGIN ================= */
 /* ================= HOME ================= */

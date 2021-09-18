@@ -7,12 +7,7 @@ import {
   loginAction,
   loadJwt,
 } from "./../context/AuthActions";
-/* 
-const header = {
-  headers: {
-    Authorization: `Bearer ${jwt}`,
-  },
-}; */
+
 export const Authlogin = async (user, dispatch, dispatchjwt) => {
   dispatch(loginAction());
   try {
@@ -67,6 +62,40 @@ export const commentSomething = async (user, text, token, postId) => {
     await axios.put(
       `http://localhost:3010/api/v1/posts/${postId}/comment`,
       { userId: user, comments: { body: text } },
+      header
+    );
+    console.log("success!!!");
+  } catch (error) {
+    console.log(error);
+  }
+};
+export const votePost = async (user, postId, token) => {
+  const header = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  };
+  try {
+    await axios.put(
+      `http://localhost:3010/api/v1/posts/${postId}/vote`,
+      { userId: user },
+      header
+    );
+    console.log("success!!!");
+  } catch (error) {
+    console.log(error);
+  }
+};
+export const followUser = async (user, currentuser, token) => {
+  const header = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  };
+  try {
+    await axios.put(
+      `http://localhost:3010/api/v1/users/${currentuser}/follow`,
+      { userId: user },
       header
     );
     console.log("success!!!");
