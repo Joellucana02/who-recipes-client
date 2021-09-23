@@ -1,16 +1,25 @@
 import axios from "axios";
 import React, { useContext } from "react";
 import { useState, useEffect } from "react";
+import { followUser } from "../api/ApiAuthCall";
 import AddPost from "../components/home/AddPost";
 import DisplayArr from "../components/home/DisplayArr";
 import Navbar from "../components/home/Navbar";
 import { context } from "../context/AuthContextThis";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  useParams,
+  useRouteMatch,
+} from "react-router-dom";
 
 const UserThis = () => {
   const [userData, setUserData] = useState({});
   const [userC, setUser] = useState({});
   const userId = localStorage.getItem("user");
-  const { user } = useContext(context);
+  const { user, jwt } = useContext(context);
   useEffect(() => {
     const getUser = async () => {
       const raw = await axios.get(
@@ -32,6 +41,11 @@ const UserThis = () => {
     };
     getData();
   }, []);
+  const follow = () => {
+    followUser(user._id, userC._id, jwt);
+    console.log("hello world...");
+  };
+  let { path, url } = useRouteMatch();
   return (
     <>
       <Navbar />
@@ -47,16 +61,35 @@ const UserThis = () => {
             <h3>{userC.username}</h3>
             {user._id !== userId ? (
               <div className="me-info__stats">
-                <button>Follow</button>
+                <button onClick={follow}>Follow</button>
                 <button>Report</button>
               </div>
             ) : (
               ""
             )}
             <div className="me-info__stats">
-              <button>Followers: {userC.followers.length}</button>
-              <button>Following: {userC.followings.length}</button>
-              <button>Posts: {userData.length} </button>
+              <Router>
+                <Link to={`${url}/followers`}>
+                  <button>Followers: {userC.followers.length}</button>
+                </Link>
+                <Link to={`${url}/following`}>
+                  <button>Following: {userC.followings.length}</button>
+                </Link>
+                <Link to={`${url}`}>
+                  <button>Posts: {userData.length} </button>
+                </Link>
+                <Switch>
+                  {/* <Route exact path={path}>
+                      <h3>this is posts</h3>
+                    </Route> */}
+                  <Route path={`${path}/:id`}>
+                    <FollowingC />
+                  </Route>
+                  <Route path={`${path}/:id`}>
+                    <FollowersC />
+                  </Route>
+                </Switch>
+              </Router>
             </div>
           </div>
         ) : (
@@ -76,3 +109,21 @@ const UserThis = () => {
 };
 
 export default UserThis;
+function FollowingC() {
+  let { id } = useParams();
+  return (
+    <div>
+      <h3>{id}</h3>
+      <h3>this is following</h3>
+    </div>
+  );
+}
+function FollowersC() {
+  let { id } = useParams();
+  return (
+    <div>
+      <h3>{id}</h3>
+      <h3>this is followers</h3>
+    </div>
+  );
+}
