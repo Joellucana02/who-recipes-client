@@ -2,6 +2,8 @@ import React from "react";
 import Navbar from "../components/home/Navbar";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { Link, Redirect } from "react-router-dom";
+
 const Search = () => {
   const [inputSearch, setInputSearch] = useState("");
   const [resultsC, setResultsC] = useState({});
@@ -17,13 +19,18 @@ const Search = () => {
   }, []);
   function Item(props) {
     const { data } = props;
+    const getUser = () => {
+      localStorage.setItem("user", data._id);
+    };
     return (
       <div className="following-item">
         <img
           src="https://kctherapy.com/wp-content/uploads/2019/09/default-user-avatar-e1569863570634.png"
           alt={data.username}
         />
-        <button>{data.username}</button>
+        <Redirect to="/user">
+          <button onClick={getUser}>{data.username}</button>
+        </Redirect>
       </div>
     );
   }
@@ -57,7 +64,7 @@ const Search = () => {
         placeholder="What are you looking for?"
         onChange={(e) => setInputSearch(e.target.value)}
       />
-      <FollowingC />
+      {resultsC.users ? <FollowingC /> : ""}
     </div>
   );
 };
