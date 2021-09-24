@@ -159,3 +159,10 @@ textarea {
   display: flex;
 }
 /* ================= ME ================= */
+/* ================= FOLLOW ITEM ================= */
+.following-item img {
+  width: 3rem;
+  height: 3rem;
+  margin: auto;
+}
+/* ================= FOLLOW ITEM ================= */
