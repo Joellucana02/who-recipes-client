@@ -29,8 +29,8 @@ const Routing = () => {
             {user ? <Redirect to="/" /> : <Signup />}
           </Route>
           <Route path="/login">{!user ? <Login /> : <Redirect to="/" />}</Route>
-          <Route path="/search" children={<Search />} />
           <Route path="/user" children={<UserThis />} />
+          <Route path="/search" children={<Search />} />
         </Switch>
       </Router>
     </>
